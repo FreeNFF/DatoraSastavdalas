@@ -13,9 +13,13 @@ logs.configure(background="#b3ebf2")
 bilde_frame = tk.Frame(logs)
 bilde_frame.grid(row=6, column=0)
 bilde_image =Image.open("images.png")
-resized_bilde = bilde_image.resize((125,125))
-#bilde = ImageTk.PhotoImage(resized_bilde)
-#bilde_label = tkk.Label()
+resized_bilde = bilde_image.resize((150,125))
+bilde = ImageTk.PhotoImage(resized_bilde)
+bilde_label = ttk.Label(bilde_frame, image=bilde)
+bilde_label.grid(row=6, column=0)
+
+#izveidot pogu
+
 
 
 
