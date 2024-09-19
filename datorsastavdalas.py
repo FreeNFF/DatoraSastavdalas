@@ -1,3 +1,4 @@
+from distutils import command
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
@@ -59,6 +60,23 @@ def pasutijums():
     detalas.grid(row=2, column=2, padx=10, pady=10)
     detalascena.grid(row=3, column=2, padx=10, pady=10)
     detalasskaits.grid(row=4, column=2, padx=10, pady=10)
+
+    def rezultats():
+        selected_item3=detalascena.get()
+        value = int(detalasskaits.get())
+        values= {"5":5, "10":10, "25":25, "50":50, "100":100, "250":250, "1000":1000}
+        cena = values[selected_item3]
+        result = value*cena
+        result_label.config(text=f"Rezultāts: {result} eiro.")
+
+    result_label = tk.Label(logs1)
+    result_label.grid(row=6, column= 0)
+
+    btn2 = tk.Button(logs1, "Aprēķināt detaļas cenu", bd="5", command=rezultats)
+    btn2.grid(row=5, column=0)
+
+    btn3 = tk.Button(logs1, "Aizvērt", bd="5", command=logs1.destroy)
+    btn3.grid(row=5, column=1)
 
 
 
