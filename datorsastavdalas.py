@@ -44,6 +44,22 @@ def pasutijums():
     cena = tk.StringVar()
     skaits = tk.StringVar()
 
+    #izvēles izveide
+    darbinieks = ttk.Combobox(logs1, textvariable=vardsuzvards)
+    detalas = ttk.Combobox(logs1, textvariable=detala)
+    detalascena = ttk.Combobox(logs1, textvariable=cena)#izvēles logs
+    detalasskaits = ttk.Entry(logs1, textvariable=skaits)#ievades logs
+
+    #izvēles vērtības
+    darbinieks["values"] = ("Mareks Bahmanis", "Jānis Eglis", "Sergejs Estris", "Juris Kalniņš") 
+    detalas["values"] = ("Monitors", "Pelīte", "Klavietūra", "Austiņas")
+    detalascena["values"] = ("5", "10", "25", "50", "100", "250", "1000")
+
+    darbinieks.grid(row=1, column=2, padx=10, pady=10)
+    detalas.grid(row=2, column=2, padx=10, pady=10)
+    detalascena.grid(row=3, column=2, padx=10, pady=10)
+    detalasskaits.grid(row=4, column=2, padx=10, pady=10)
+
 
 
 
